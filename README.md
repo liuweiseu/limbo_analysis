@@ -6,9 +6,9 @@ We have three m functions in this folder, which are used for read limbo file hea
   It's used for prasing file type by checking the filename. If the file name starts with 'Spectra', it means it's a spectra data file; if the file name starts with 'VoltageV2', it means it's a voltage data file.  
   ***Note:*** A filename starting with 'VoltageV1' won't be created in the current design.  
 
-* ReadHeader
+* ReadHeader  
 It's used for reading the file header, and decode the json format.  
-* ReadDataFrame
+* ReadDataFrame  
 It's used for reading the data frame, and each data frame contains three parts:   
   * UNIX time
   * Counter value
