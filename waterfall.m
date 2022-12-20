@@ -49,7 +49,7 @@ while ~feof(fp)
     frame = ReadDataFrame(fp,pkt_type);
     i = i + 1;
     % cal power
-    p = sqrt(frame.data);
+    p = frame.data;
     % select the channels we want 
     s_power = p(start_ch:(start_ch + ch -1));
     % remove baseline

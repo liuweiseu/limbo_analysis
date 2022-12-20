@@ -35,6 +35,7 @@ while cho ~= 1
     if(pkt_type == 0)
         plot(x,10*log10(frame.data));
         xlabel("MHz");
+        ylabel("dB");
         title(["Spectra Data--FrameNo: ",num2str(i)]);
     elseif(pkt_type == 1)
         power = [];
