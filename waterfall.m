@@ -68,7 +68,7 @@ fclose(fp);
 % plot the figure
 colormap(jet(128));
 x = (1:total_frames/integrated_frames)*dt*integrated_frames;
-y = (1:ch)*df;
+y = (start_ch-1:ch+start_ch-2)*df;
 h = pcolor(x,y,i_power);
 set(h,'edgecolor','none','facecolor','interp');
 xlabel('ms');
