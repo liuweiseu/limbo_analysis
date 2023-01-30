@@ -2,7 +2,9 @@ function [frame] = ReadDataFrame(fp, pkt_type)
     t = fread(fp,2,'uint64');
     cnt = fread(fp,1,'uint64');
     if(pkt_type == 0) %spectra data
-        d = fread(fp,2048,'uint16');
+        d = fread(fp,2048,'uint16','ieee-le');
+        d = swapbytes(uint16(d));
+        d = double(d);
     elseif(pkt_type == 1) % voltage data
         d = fread(fp,8192,'uint8');
         d = reshape(d,4,2048);

@@ -33,7 +33,8 @@ while cho ~= 1
     frame = ReadDataFrame(fp,pkt_type);
     i = i + 1;
     if(pkt_type == 0)
-        plot(x,10*log10(frame.data));
+        plot(x,10*log10(frame.data+1));
+%         plot(x,frame.data);
         xlabel("MHz");
         ylabel("dB");
         title(["Spectra Data--FrameNo: ",num2str(i)]);
