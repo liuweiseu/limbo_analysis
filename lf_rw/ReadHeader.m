@@ -11,7 +11,7 @@ if(t == 123)
 else
     hdr_size = fread(fp,1,'uint32');
 end
-
+hdr_size
 d = fread(fp,hdr_size,'uint8');
 l = length(find(d));
 s = sprintf("%s",d(1:l));
