@@ -89,3 +89,23 @@ while cho ~= 1
     end
 end
 fclose(fp);
+
+
+function [re,im]=get_voltage(d)
+    N = length(d);
+    for i = 1:N
+        tmp = bitand(d(i),15);
+        if(tmp > 7)
+            re(i) = tmp-16;
+        else
+            re(i) = tmp;
+        end
+        tmp = bitshift(d(i),-4);
+        if(tmp > 7)
+            im(i) = tmp-16;
+        else
+            im(i) = tmp;
+        end
+    end
+
+end
